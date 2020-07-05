@@ -1,4 +1,16 @@
 
+
+
+from functools import reduce
+
+oldColumns = data.schema.names
+newColumns = ["name", "age"]
+
+df = reduce(lambda data, idx: data.withColumnRenamed(oldColumns[idx], newColumns[idx]), xrange(len(oldColumns)), data)
+df.printSchema()
+df.show()
+
+
 df.withColumn("test3",expr("to_date(value, format)")).show()
 from pyspark.sql.functions import col
 from pyspark.sql.functions import *
