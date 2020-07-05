@@ -1,5 +1,6 @@
 
 
+df.write.format('csv').option('header',True).mode('overwrite').option('sep',',').save('file:///home/tangr/output.csv')
 
 from functools import reduce
 
