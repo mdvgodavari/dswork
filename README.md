@@ -1,3 +1,5 @@
+
+df.withColumn("test3",expr("to_date(value, format)")).show()
 from pyspark.sql.functions import col
 from pyspark.sql.functions import *
 from pyspark.sql import *
